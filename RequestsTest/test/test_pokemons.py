@@ -15,4 +15,5 @@ def test_part_of_respons():
     assert response_get.json()["data"][0]["name"] == 'Vorsa'
 
 def test_trainer_name():
-    respons_get = requests.get(url=f'{URL}/trainers',params= {'trainer_id' : TRANIER_ID})
+    trainer_get = requests.get(url=f'{URL}/trainers',params= {'trainer_id' : TRANIER_ID})
+    assert trainer_get.json()["data"][0]["trainer_name"] == 'Python'
